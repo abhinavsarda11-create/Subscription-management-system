@@ -12,10 +12,15 @@ import Settings   from "./pages/Settings";
 
 function Layout({ children }) {
   return (
-    <div className="flex min-h-screen bg-surface-950 mesh-bg noise">
+    <div className="flex min-h-screen mesh-bg" style={{ background: "var(--bg)", minHeight: "100vh" }}>
       <Sidebar />
-      <main className="flex-1 ml-64 p-8 min-h-screen overflow-y-auto">
-        <div className="max-w-6xl mx-auto">
+      <main className="flex-1 min-h-screen overflow-y-auto" style={{ marginLeft: 224 }}>
+        <div style={{
+          position: "fixed", top: 0, left: 224, right: 0, height: 1, zIndex: 30,
+          background: "linear-gradient(90deg, transparent, rgba(245,158,11,0.15), rgba(99,102,241,0.2), transparent)",
+          pointerEvents: "none",
+        }} />
+        <div className="max-w-5xl mx-auto px-7 py-7">
           {children}
         </div>
       </main>
